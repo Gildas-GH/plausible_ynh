@@ -91,13 +91,14 @@ dockerapp_ynh_copyconf () {
 
 # docker run
 dockerapp_ynh_run () {
-	ret=$(bash docker/run.sh)
-	if [ "$ret" != "0" ]
-	then
+	bash docker/run.sh
+	
+	#if [ "$ret" != "0" ]
+	#then
 		# fix after yunohost restore iptables issue
 		#[ "$ret" == "125" ] && docker inspect $app | grep "Error" | grep -q "iptables failed" && systemctl restart docker && return 0
 		#ynh_die "Sorry ! App cannot start with docker. Please check docker logs."
-	fi
+	#fi
 }
 
 # docker rm
