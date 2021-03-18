@@ -15,8 +15,11 @@ source /usr/share/yunohost/helpers
 # Retrieve app settings
 app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get "$app" domain)
+path_url=$(ynh_app_setting_get "$app" path)
 
 dockerapp_ynh_loadvariables
+
+ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
 
 #=================================================
 # STOP AND REMOVE SERVICE
