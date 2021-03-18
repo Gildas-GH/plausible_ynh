@@ -51,6 +51,8 @@ ynh_webpath_register $app $domain $path_url
 # MODIFY A CONFIG FILE
 #=================================================
 
+admin_mail=$(ynh_user_get_info $admin 'mail')
+ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
 dockerapp_ynh_findreplaceallvaribles
 
 #=================================================
