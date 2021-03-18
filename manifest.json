@@ -1,0 +1,62 @@
+{
+    "name": "Plausible Analytics",
+    "id": "plausible",
+    "url": "https://plausible.io/",
+    "packaging_format": 1,
+    "description": {
+        "en": "Plausible is a lightweight and open-source website analytics tool.",
+        "fr": "Un outil d&#39;analytiques léger et open-source."
+    },
+    "version": "1.0",
+    "license": "AGPL-3.0",
+    "maintainer": {
+        "name": "Gildas GH",
+        "email": "gildas@becauseofprog.fr"
+    },
+    "requirements": {
+        "yunohost": ">= 2.7.2"
+    },
+    "services": [
+        "nginx"
+     ],
+    "multi_instance": true,
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for Plausible Analytics",
+                    "fr": "Choisissez un domaine pour Plausible Analytics"
+                },
+                "example": "app.domain.org"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for Plausible Analytics",
+                    "fr": "Choisissez un chemin pour Plausible Analytics"
+                },
+                "example": "/mypath",
+                "default": "/plausible"
+            },{
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Can a non-member access the app ?",
+                    "fr": "Un non-membre peut-il accéder à l'application ?"
+                },
+                "default": false
+            },{
+                "name": "admin",
+                "type": "user",
+                "ask": {
+                    "en": "Choose the Plausible Analytics administrator (must be an existing YunoHost user)",
+                    "fr": "Choisissez l'administrateur Plausible Analytics (doit etre un utilisateur Yunohost existant)"
+                },
+                "default": "homer"
+            }
+        ]
+    }
+}

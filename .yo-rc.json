@@ -1,0 +1,18 @@
+{
+  "generator-dockerapp-yunohost": {
+    "beautifulName": "Plausible Analytics",
+    "defaultPathOption": "plausible",
+    "forceSecureAccess": true,
+    "secureAccessOption": true,
+    "adminUserOption": true,
+    "enDescription": "Plausible is a lightweight and open-source website analytics tool.",
+    "frDescription": "Un outil d'analytiques léger et open-source.",
+    "urlApp": "https://plausible.io/",
+    "urlDockerHub": "https://hub.docker.com/r/plausible/analytics",
+    "authorName": "Gildas GH",
+    "authorEmail": "gildas@becauseofprog.fr",
+    "idName": "plausible",
+    "reverseProxyProtocol": "http",
+    "scriptsLoadSave": false
+  }
+}
