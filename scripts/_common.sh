@@ -60,6 +60,7 @@ dockerapp_ynh_findreplace () {
 
 dockerapp_ynh_findreplacepath () {
 	dockerapp_ynh_findreplace ../conf/. "$1" "$2"
+	dockerapp_ynh_findreplace ./docker/. "$1" "$2"
 }
 
 # find replace all variables
