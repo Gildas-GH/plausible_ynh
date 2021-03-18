@@ -64,10 +64,11 @@ dockerapp_ynh_findreplacepath () {
 
 # find replace all variables
 dockerapp_ynh_findreplaceallvaribles () {
-	dockerapp_ynh_findreplacepath "YNH_APP" "$app"
-        dockerapp_ynh_findreplacepath "YNH_DATA" "$data_path"
-        dockerapp_ynh_findreplacepath "YNH_PORT" "$port"
-        dockerapp_ynh_findreplacepath "YNH_PATH" "$path_url"
+    dockerapp_ynh_findreplacepath "YNH_PATH" "$path_url"
+	dockerapp_ynh_findreplacepath "YNH_DOMAIN" "$domain"
+	dockerapp_ynh_findreplacepath "YNH_ADMIN_USER" "$admin"
+	dockerapp_ynh_findreplacepath "YNH_ADMIN_MAIL" "$admin_mail"
+
 	bash docker/_specificvariablesapp.sh
 }
 
