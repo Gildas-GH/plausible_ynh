@@ -37,6 +37,8 @@ dockerapp_ynh_checkinstalldocker () {
 		#	[ "$(dockerapp_ynh_driversetter $d)" == "0" ] && echo "$d driver will be used" 1>&2 && break
 		#done
 
+		chmod +x /usr/local/bin/docker-compose
+
 		# retest
 		ret=$(sh _dockertest.sh)
 	fi
