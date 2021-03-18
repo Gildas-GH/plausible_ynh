@@ -95,8 +95,8 @@ dockerapp_ynh_run () {
 	if [ "$ret" != "0" ]
 	then
 		# fix after yunohost restore iptables issue
-		[ "$ret" == "125" ] && docker inspect $app | grep "Error" | grep -q "iptables failed" && systemctl restart docker && return 0
-		ynh_die "Sorry ! App cannot start with docker. Please check docker logs."
+		#[ "$ret" == "125" ] && docker inspect $app | grep "Error" | grep -q "iptables failed" && systemctl restart docker && return 0
+		#ynh_die "Sorry ! App cannot start with docker. Please check docker logs."
 	fi
 }
 
