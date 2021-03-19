@@ -62,8 +62,7 @@
                 "ask": {
                     "en": "Choose the Plausible Analytics admin password",
                     "fr": "Choisissez le mot de passe de l'administrateur Plausible Analytics"
-                },
-                "default": "homer"
+                }
             }
         ]
     }
