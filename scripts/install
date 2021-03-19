@@ -53,6 +53,10 @@ ynh_webpath_register $app $domain $path_url
 
 admin_mail=$(ynh_user_get_info $admin 'mail')
 ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
+
+password=$(tr -dc A-Za-z0-9 < /dev/urandom | head -c 13)
+ynh_print_info --message="Mot de passe de l'application : ${password}"
+
 dockerapp_ynh_findreplaceallvaribles
 
 secret_key=$(openssl rand -base64 64 | tr -d '\n')

@@ -69,6 +69,7 @@ dockerapp_ynh_findreplaceallvaribles () {
 	dockerapp_ynh_findreplacepath "YNH_DOMAIN" "$domain"
 	dockerapp_ynh_findreplacepath "YNH_ADMIN_USER" "$admin"
 	dockerapp_ynh_findreplacepath "YNH_ADMIN_MAIL" "$admin_mail"
+	dockerapp_ynh_findreplacepath "YNH_ADMIN_PASS" "$password"
 
 	bash docker/_specificvariablesapp.sh
 }
