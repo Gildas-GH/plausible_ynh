@@ -55,6 +55,11 @@ admin_mail=$(ynh_user_get_info $admin 'mail')
 ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
 dockerapp_ynh_findreplaceallvaribles
 
+secret_key=$(openssl rand -base64 64 | tr -d '\n')
+ynh_replace_string "__YNH_KEY__" $secret_key "docker/_specificvariablesapp.sh"
+
+YNH_KEY
+
 #=================================================
 # COPY CONF
 #=================================================
