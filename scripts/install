@@ -10,6 +10,7 @@ domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 admin=$YNH_APP_ARG_ADMIN
+password=$YNH_APP_ARG_PASSWORD
 
 
 #=================================================
@@ -53,9 +54,6 @@ ynh_webpath_register $app $domain $path_url
 
 admin_mail=$(ynh_user_get_info $admin 'mail')
 ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
-
-password=$(tr -dc A-Za-z0-9 < /dev/urandom | head -c 13)
-ynh_print_info --message="Mot de passe de l'application : ${password}"
 
 dockerapp_ynh_findreplaceallvaribles
 

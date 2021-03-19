@@ -18,8 +18,8 @@
     },
     "services": [
         "nginx"
-     ],
-    "multi_instance": true,
+    ],
+    "multi_instance": false,
     "arguments": {
         "install" : [
             {
@@ -54,6 +54,14 @@
                 "ask": {
                     "en": "Choose the Plausible Analytics administrator (must be an existing YunoHost user)",
                     "fr": "Choisissez l'administrateur Plausible Analytics (doit etre un utilisateur Yunohost existant)"
+                },
+                "default": "homer"
+            },{
+                "name": "password",
+                "type": "password",
+                "ask": {
+                    "en": "Choose the Plausible Analytics admin password",
+                    "fr": "Choisissez le mot de passe de l'administrateur Plausible Analytics"
                 },
                 "default": "homer"
             }
