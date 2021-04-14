@@ -35,7 +35,13 @@ dockerapp_ynh_loadvariables
 # MODIFY A CONFIG FILE
 #=================================================
 
+admin_mail=$(ynh_user_get_info $admin 'mail')
+ynh_replace_string "__PORT__" $port "docker/docker-compose.yml"
+
 dockerapp_ynh_findreplaceallvaribles
+
+secret_key=$(openssl rand -base64 64 | tr -d '\n')
+ynh_replace_string "__YNH_KEY__" $secret_key "docker/_specificvariablesapp.sh"
 
 #=================================================
 # COPY CONF
@@ -57,6 +63,8 @@ dockerapp_ynh_rm
 
 # docker run
 dockerapp_ynh_run
+
+docker exec docker_plausible_db_1 psql -U postgres -d plausible_db -c "UPDATE users SET email_verified = true;"
 
 
 #=================================================
