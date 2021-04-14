@@ -24,6 +24,9 @@ domain=$(ynh_app_setting_get "$app" domain)
 path_url=$(ynh_app_setting_get "$app" path)
 is_public=$(ynh_app_setting_get "$app" is_public)
 admin=$(ynh_app_setting_get "$app" admin)
+password=$(ynh_app_setting_get "$app" password)
+
+admin_mail=$(ynh_user_get_info $admin 'mail')
 
 
 dockerapp_ynh_loadvariables
