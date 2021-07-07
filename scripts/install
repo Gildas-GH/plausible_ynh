@@ -74,7 +74,7 @@ dockerapp_ynh_copyconf
 # docker run
 dockerapp_ynh_run
 
-docker exec docker_plausible_db_1 psql -U postgres -d plausible_db -c "UPDATE users SET email_verified = true;"
+#docker exec docker_plausible_db_1 psql -U postgres -d plausible_db -c "UPDATE users SET email_verified = true;"
 
 #=================================================
 # NGINX CONFIGURATION
